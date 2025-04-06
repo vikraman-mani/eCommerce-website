@@ -22,3 +22,9 @@ React-Bootstrap:- npm install react-bootstrap bootstrap
 https://react-bootstrap.netlify.app/docs/getting-started/introduction
 
 ![alt text](image-1.png)
+
+useEffect() hook (component side effect) ==> CallBack Function & Dependency
+
+useEffect( ()=>{} , [] )
+
+![alt text](image-2.png)
