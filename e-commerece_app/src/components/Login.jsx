@@ -1,12 +1,20 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const Login = () => {
 
  let {newUser} = useParams();
+ let navigate = useNavigate();
+
+ let handleNavigate = () => { 
+    navigate("/");
+ }
 
   return (
-    <div>Login - {newUser}</div>
+    <div>
+        Login - {newUser}
+        <button onClick={handleNavigate}> Move to Home </button>
+    </div>
   )
 }
 

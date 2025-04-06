@@ -4,6 +4,8 @@ import Login from './components/Login'
 import Products from './components/Products'
 import SignUp from './components/SignUp'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
+import ProductList from './components/ProductList'
+import ProductDetails from './components/ProductDetails'
 
 function App() {
   let user = "Vikraman"
@@ -22,7 +24,11 @@ function App() {
                  <Route path="/" element={<Home/>} />
                  <Route path="/login/:newUser" element={<Login/>} />
                  <Route path="/signup" element={<SignUp/>} />
-                 <Route path="/products" element={<Products/>} />
+                 <Route path="/products" element={<Products/>} >
+                    <Route index element={<ProductList/>} />
+                    <Route path="list" element={<ProductList/>} />
+                    <Route path="details" element={<ProductDetails/>} />
+                 </Route>
             </Routes>
 
         </BrowserRouter>
