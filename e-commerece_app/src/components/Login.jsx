@@ -1,8 +1,12 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const Login = () => {
+
+ let {newUser} = useParams();
+
   return (
-    <div>Login</div>
+    <div>Login - {newUser}</div>
   )
 }
 
