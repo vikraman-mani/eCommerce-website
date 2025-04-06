@@ -6,6 +6,7 @@ import SignUp from './components/SignUp'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
 import ProductList from './components/ProductList'
 import ProductDetails from './components/ProductDetails'
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
