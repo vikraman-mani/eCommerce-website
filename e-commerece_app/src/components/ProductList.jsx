@@ -11,6 +11,9 @@ const ProductList = () => {
   useEffect(() => {
     fetch("http://localhost:4000/products", { method: "Get" })
       .then((response) => {
+        if (!response.ok) {
+          throw new Error("Something went wrong!");
+        }
         return response.json();
       })
       .then((data) => {
