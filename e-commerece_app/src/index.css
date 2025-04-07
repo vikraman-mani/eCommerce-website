@@ -10,9 +10,8 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,7 +28,6 @@ body {
   margin: auto;
 }
 
-
 main {
   width: 100%;
   display: flex;
@@ -38,4 +36,23 @@ main {
   justify-content: center;
   align-items: center;
   overflow-y: auto;
+}
+
+.Products {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Product {
+  flex-grow: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-evenly;
 }

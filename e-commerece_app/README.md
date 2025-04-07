@@ -47,3 +47,5 @@ json-server --watch db.json --port 4000
 
 Endpoints:
 http://localhost:4000/products
+
+API call with Fetch (Another libraries are Axios api)
