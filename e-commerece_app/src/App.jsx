@@ -16,12 +16,12 @@ function App() {
      <div className='app'>
 
         <BrowserRouter>
-            <ol>
+            {/* <ol>
               <li>  <Link to="/"> Home </Link>  </li>
               <li>  <Link to={`/login/${user}`}> Login </Link>  </li>
               <li>  <Link to="/signup"> SignUp </Link>  </li>
               <li>  <Link to="/products"> Products </Link>  </li>
-            </ol>
+            </ol> */}
             <NavBar/>
             <Routes>
                  <Route path="/" element={<Home/>} />
