@@ -8,6 +8,7 @@ import ProductList from './components/ProductList'
 import ProductDetails from './components/ProductDetails'
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar'
 
 function App() {
   let user = "Vikraman"
@@ -21,7 +22,7 @@ function App() {
               <li>  <Link to="/signup"> SignUp </Link>  </li>
               <li>  <Link to="/products"> Products </Link>  </li>
             </ol>
-
+            <NavBar/>
             <Routes>
                  <Route path="/" element={<Home/>} />
                  <Route path="/login/:newUser" element={<Login/>} />
