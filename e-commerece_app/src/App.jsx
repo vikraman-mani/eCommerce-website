@@ -9,6 +9,7 @@ import ProductDetails from "./components/ProductDetails";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
+import NotFound from "./components/NotFound";
 
 function App() {
   let user = "Vikraman";
@@ -31,6 +32,7 @@ function App() {
             <Route path="list" element={<ProductList />} />
             <Route path="details" element={<ProductDetails />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

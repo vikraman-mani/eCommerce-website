@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 
 const ProductList = () => {
   let [products, setProducts] = useState([]);
+  let [error, setError] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:4000/products", { method: "Get" })
@@ -13,16 +14,24 @@ const ProductList = () => {
       })
       .then((data) => {
         setProducts(data);
+      })
+      .catch((error) => {
+        setError(error.message);
       });
   }, []);
 
   return (
     <div>
       <h1>Product List</h1>
+
       <section className="Products">
         {products.map((product) => {
           return (
-            <Card style={{ width: "18rem" }} className="Product">
+            <Card
+              style={{ width: "18rem" }}
+              className="Product"
+              key={product.id}
+            >
               <center>
                 <Card.Img
                   variant="top"
@@ -45,6 +54,8 @@ const ProductList = () => {
           );
         })}
       </section>
+
+      {error && <p>{error}</p>}
     </div>
   );
 };
