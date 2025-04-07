@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Atom } from "react-loading-indicators";
 
 const ProductList = () => {
   let [products, setProducts] = useState([]);
@@ -28,7 +29,13 @@ const ProductList = () => {
   }, []);
 
   if (isloading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <center>
+          <Atom color="#32cd32" size="medium" text="Loading..." textColor="" />
+        </center>
+      </div>
+    );
   } else {
     return (
       <div>

@@ -49,3 +49,6 @@ Endpoints:
 http://localhost:4000/products
 
 API call with Fetch (Another libraries are Axios api)
+
+React Loading Indicators
+![alt text](image-5.png)
