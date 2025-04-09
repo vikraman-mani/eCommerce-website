@@ -11,6 +11,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
 import NewProduct from "./components/NewProduct";
+import UpdateProduct from "./components/UpdateProduct";
 
 function App() {
   let user = "Vikraman";
@@ -34,7 +35,8 @@ function App() {
             <Route path="details" element={<ProductDetails />} />
           </Route>
           <Route path="*" element={<NotFound />} />
-          <Route path="newProduct" element={<NewProduct />} />
+          <Route path="/newProduct" element={<NewProduct />} />
+          <Route path="/updateProduct/:id" element={<UpdateProduct />} />
         </Routes>
       </BrowserRouter>
     </div>

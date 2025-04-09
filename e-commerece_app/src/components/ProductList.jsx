@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Atom } from "react-loading-indicators";
 import useFetch from "./custom-hook/useFetch";
+import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {
   // let [products, setProducts] = useState([]);
@@ -32,6 +33,8 @@ const ProductList = () => {
   let { products, error, isloading } = useFetch(
     "http://localhost:4000/products"
   );
+
+  let navigate = useNavigate();
 
   if (isloading) {
     return (
@@ -64,13 +67,22 @@ const ProductList = () => {
 
                 <Card.Body>
                   <Card.Title>{product.title}</Card.Title>
-                  <Card.Text style={{ overflow: "scroll", height: "100px" }}>
+                  {/* <Card.Text style={{ overflow: "scroll", height: "100px" }}>
                     {product.description}
-                  </Card.Text>
+                  </Card.Text> */}
+                  <Card.Text> ${product.price}</Card.Text>
                 </Card.Body>
                 <Card.Footer className="cardFooter">
-                  <Card.Title> ${product.price}</Card.Title>
                   <Button variant="primary">Add to Card</Button>
+                  <Button
+                    variant="secondary"
+                    onClick={() => {
+                      navigate(`/updateProduct/${product.id}`);
+                    }}
+                  >
+                    Edit
+                  </Button>
+                  <Button variant="danger">Delete</Button>
                 </Card.Footer>
               </Card>
             );
