@@ -61,3 +61,6 @@ Axios api used to get Json data
 Material UI - npm install @mui/material @emotion/react @emotion/styled
 ![alt text](image-7.png)
 ![alt text](image-8.png)
+
+sweetAlert in react Libraries
+![alt text](image-9.png)

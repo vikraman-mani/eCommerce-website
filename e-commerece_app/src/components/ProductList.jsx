@@ -5,6 +5,8 @@ import Card from "react-bootstrap/Card";
 import { Atom } from "react-loading-indicators";
 import useFetch from "./custom-hook/useFetch";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const ProductList = () => {
   // let [products, setProducts] = useState([]);
@@ -30,11 +32,37 @@ const ProductList = () => {
   //     });
   // }, []);
 
-  let { products, error, isloading } = useFetch(
+  let { products, error, isloading, setProducts } = useFetch(
     "http://localhost:4000/products"
   );
 
   let navigate = useNavigate();
+
+  let handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`http://localhost:4000/products/${id}`).then(() => {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success",
+          });
+        });
+      }
+
+      // show updated product list on UI after deleted
+      let newProductList = products.filter((product) => product.id !== id);
+      setProducts(newProductList);
+    });
+  };
 
   if (isloading) {
     return (
@@ -82,7 +110,14 @@ const ProductList = () => {
                   >
                     Edit
                   </Button>
-                  <Button variant="danger">Delete</Button>
+                  <Button
+                    variant="danger"
+                    onClick={() => {
+                      handleDelete(product.id);
+                    }}
+                  >
+                    Delete
+                  </Button>
                 </Card.Footer>
               </Card>
             );

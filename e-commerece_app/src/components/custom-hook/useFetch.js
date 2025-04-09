@@ -23,7 +23,7 @@ function useFetch(url) {
     fetchApi();
   }, []);
 
-  return { products, error, isloading };
+  return { products, error, isloading, setProducts };
 }
 
 export default useFetch;
