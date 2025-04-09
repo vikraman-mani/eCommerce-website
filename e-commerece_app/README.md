@@ -52,3 +52,8 @@ API call with Fetch (Another libraries are Axios api)
 
 React Loading Indicators
 ![alt text](image-5.png)
+
+Axios API - External libraries - npm i axios
+![alt text](image-6.png)
+
+Axios api used to get Json data
