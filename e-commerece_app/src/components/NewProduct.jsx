@@ -42,12 +42,41 @@ const NewProduct = () => {
     }
   };
 
+  let handleAdd = (event) => {
+    event.preventDefault(); // avoid load/refresh browser page when submit the button
+    fetch("http://localhost:4000/products", {
+      method: "POST",
+      header: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newProduct), // JS convert to JSON format
+    }).then(() => {
+      alert("Data added successfully");
+      setNewProduct({
+        title: "",
+        price: 500,
+        description:
+          "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        category: "",
+        image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+        rating: {
+          rate: 0,
+          count: 0,
+        },
+      });
+    });
+  };
+
   return (
     <Paper elevation={20} style={paperStyle}>
       <Typography variant="h5" style={{ textAlign: "center" }}>
         Create New Product
       </Typography>
-      <Grid component="form" style={{ display: "grid", gap: "15px" }}>
+      <Grid
+        component="form"
+        onSubmit={handleAdd}
+        style={{ display: "grid", gap: "15px" }}
+      >
         <TextField
           value={newProduct.title}
           name="title"
@@ -87,7 +116,7 @@ const NewProduct = () => {
           </Grid>
         </Grid>
 
-        <Button variant="contained" fullWidth>
+        <Button type="submit" variant="contained" fullWidth>
           Add
         </Button>
       </Grid>
