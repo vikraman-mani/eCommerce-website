@@ -57,3 +57,7 @@ Axios API - External libraries - npm i axios
 ![alt text](image-6.png)
 
 Axios api used to get Json data
+
+Material UI - npm install @mui/material @emotion/react @emotion/styled
+![alt text](image-7.png)
+![alt text](image-8.png)
