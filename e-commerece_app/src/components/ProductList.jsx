@@ -75,6 +75,17 @@ const ProductList = () => {
   } else {
     return (
       <div>
+        <article>
+          <span>Create New Product </span>
+          <Button
+            onClick={() => {
+              navigate("/newProduct");
+            }}
+          >
+            {" "}
+            Click Me!
+          </Button>
+        </article>
         <h1>Product List</h1>
 
         <section className="Products">
