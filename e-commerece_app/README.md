@@ -77,3 +77,6 @@ chrome extensiion Redux dev tools
 ![alt text](image-13.png)
 
 ![alt text](image-14.png)
+
+useDispatch() ==> send details to store
+useSelector() ==> get details from store

@@ -12,6 +12,7 @@ import NavBar from "./components/NavBar";
 import NotFound from "./components/NotFound";
 import NewProduct from "./components/NewProduct";
 import UpdateProduct from "./components/UpdateProduct";
+import WishList from "./components/WishList";
 
 function App() {
   let user = "Vikraman";
@@ -37,6 +38,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           <Route path="/newProduct" element={<NewProduct />} />
           <Route path="/updateProduct/:id" element={<UpdateProduct />} />
+          <Route path="/wishlist" element={<WishList />} />
         </Routes>
       </BrowserRouter>
     </div>
