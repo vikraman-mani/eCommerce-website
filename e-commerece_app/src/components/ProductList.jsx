@@ -8,6 +8,9 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../store/cartSlice"; // get actions from cartSlice.js
+
 const ProductList = () => {
   // let [products, setProducts] = useState([]);
   // let [error, setError] = useState("");
@@ -64,6 +67,11 @@ const ProductList = () => {
     });
   };
 
+  let dispatch = useDispatch();
+  let addItmToCart = (product) => {
+    dispatch(addItem(product)); // payload
+  };
+
   if (isloading) {
     return (
       <div>
@@ -112,7 +120,15 @@ const ProductList = () => {
                   <Card.Text> ${product.price}</Card.Text>
                 </Card.Body>
                 <Card.Footer className="cardFooter">
-                  <Button variant="primary">Add to Card</Button>
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      addItmToCart(product);
+                    }}
+                  >
+                    Add to Card
+                  </Button>
+
                   <Button
                     variant="secondary"
                     onClick={() => {
@@ -121,6 +137,7 @@ const ProductList = () => {
                   >
                     Edit
                   </Button>
+
                   <Button
                     variant="danger"
                     onClick={() => {

@@ -75,3 +75,5 @@ npm install @reduxjs/toolkit react-redux
 ![alt text](image-12.png)
 chrome extensiion Redux dev tools
 ![alt text](image-13.png)
+
+![alt text](image-14.png)

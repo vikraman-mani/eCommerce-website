@@ -4,11 +4,13 @@ const cartSlice = createSlice({
   name: "cart1",
   initialState: [],
   reducers: {
-    addItem(state, action) {},
+    addItem(state, action) {
+      state.push(action.payload);
+    },
     removeItem(state, action) {},
   },
 });
 
 export default cartSlice.reducer;
 
-let { addItem, removeItem } = cartSlice.actions;
+export let { addItem, removeItem } = cartSlice.actions;
