@@ -1,4 +1,5 @@
-import { Button } from "@mui/material";
+import { Button as ButtonM } from "@mui/material";
+import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
@@ -34,7 +35,7 @@ function NavBar() {
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Button
+            <ButtonM
               variant="contained"
               color="warning"
               onClick={() => {
@@ -42,7 +43,7 @@ function NavBar() {
               }}
             >
               <MdShoppingCart />
-            </Button>
+            </ButtonM>
             <Form.Control
               type="search"
               placeholder="Search"
