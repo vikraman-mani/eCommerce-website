@@ -14,6 +14,22 @@ import NewProduct from "./components/NewProduct";
 import UpdateProduct from "./components/UpdateProduct";
 import WishList from "./components/WishList";
 
+// Example
+//Set local storage
+localStorage.setItem("user", JSON.stringify([])); // JS to JSON format
+
+// Get local storage
+let dataWeb = JSON.parse(localStorage.getItem("user")); // JSON to JS format
+console.log(dataWeb);
+
+// Remove local storage
+localStorage.removeItem("user");
+
+// Code
+if (!localStorage.getItem("cart")) {
+  localStorage.setItem("cart", JSON.stringify([]));
+}
+
 function App() {
   let user = "Vikraman";
   return (

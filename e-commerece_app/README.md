@@ -80,3 +80,6 @@ chrome extensiion Redux dev tools
 
 useDispatch() ==> send details to store
 useSelector() ==> get details from store
+
+Web Storage API -- Local Storage ( stored till live-long until manually clear by code level or UI netqork tab) , session storage (store data only live or close server) , cookies (same as session and also include certain time )
+![alt text](image-15.png)
