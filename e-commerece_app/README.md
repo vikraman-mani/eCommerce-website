@@ -64,3 +64,14 @@ Material UI - npm install @mui/material @emotion/react @emotion/styled
 
 sweetAlert in react Libraries
 ![alt text](image-9.png)
+
+react-Redux + Redux Toolkit
+![alt text](image-10.png)
+![alt text](image-11.png)
+
+Dispatch --> store ( reducer --> state )
+npm install @reduxjs/toolkit react-redux
+
+![alt text](image-12.png)
+chrome extensiion Redux dev tools
+![alt text](image-13.png)
