@@ -1,12 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { removeItem } from "../store/cartSlice";
 
 const WishList = () => {
   // useSelector() ==> get details from store
   let selector = useSelector((state) => state.cart);
+
+  let dispatch = useDispatch(); // to dispatch actions to redux store
+  let handleDelete = (id) => {
+    dispatch(removeItem(id));
+  };
 
   return (
     <div>
